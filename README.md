@@ -62,7 +62,12 @@ json.dump()
 ## ATP
 
 | Step                 |Procedure             |Expected Results                   |
-|----------------------|:--------------------:|----------------------------------:|
-|  1                   | Run Counter Program  |GUI window appears with count = 0  |
-|  2                   | click count button   | display changes to count = 1      |
-etc...
+|----------------------|:--------------------:|-----------------------------------------------------------------:|
+|  1                   | Run itsallhere.py    |game display opens. tutorial box is visible. Esc closes program   |
+|  2                   | Click play button    |GUI opens. Timer starts from 7 min. 150,000 in Loans $0 balance. Option to pay button      |
+|  3                   | Click button 10x     |Number of people goes to 1. $1/sec added to balance.              |
+|  4                   |Continue pressing btn |Every 10 times one person added. 2 people rate $2/sec per person $4/sec total|
+|  5                   | Continue pressing btn|Balance grows exponentially   |
+|  6                   | If esc at any point  |Tutorial display opens back up. Progress not saved. Another esc closes program|
+|  7                   | Press pay loan       |Deducts balance and deducts loan amount. If loan paid then win screen   |
+|  8                   | Timer runs out       |Lose screen                                                |

@@ -71,4 +71,3 @@ if __name__ == "__main__":
   controller = Controller()
   controller.mainloop()
   pygame.quit()
-  pass()
