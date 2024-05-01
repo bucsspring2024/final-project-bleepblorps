@@ -283,7 +283,7 @@ class Controller:
 
             if self.text_surface.get_width() > 0:
                 # pygame.draw.rect(self.screen, self.RED, self.text_rect, 2)
-                self.screen.blit(self.text_surface, (10, self.HEIGHT//4)) #place text
+                self.screen.blit(self.text_surface, (0, self.HEIGHT/2)) #place text
 
             if self.show_loans:
                 self.loan_text = self.font.render("Loans: ${} (Balance: ${})".format(self.loan_amount, self.loan_balance), True, self.RED)
