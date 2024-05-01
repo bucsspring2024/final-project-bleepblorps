@@ -103,10 +103,10 @@ class Controller:
         self.win_lose_font = pygame.font.Font(None, 48)
         self.font = pygame.font.Font(None, 36)
 
-        # wrapped_text = f"Your goal is to pay for your loans.\n\tYou can gain your balance by clicking on the\n\tx10 button every 10 clicks for a person. You\n\thave to pay all of your loans before the timer\n\truns out."
-        # self.text_surface = self.font.render(wrapped_text, True, self.RED)
-        # self.new_surface = pygame.transform.smoothscale(self.text_surface, (550, 150))
-        # self.text_rect = self.new_surface.get_rect(center=(self.WIDTH//2, self.HEIGHT//2 + 80))
+        wrapped_text = f"Your goal is to pay for your loans.\n\tYou can gain your balance by clicking on the\n\tx10 button every 10 clicks for a person. You\n\thave to pay all of your loans before the timer\n\truns out."
+        self.text_surface = self.font.render(wrapped_text, True, self.RED)
+        self.new_surface = pygame.transform.smoothscale(self.text_surface, (550, 150))
+        self.text_rect = self.new_surface.get_rect(center=(self.WIDTH//2, self.HEIGHT//2 + 80))
         wrapped_text = ["Your goal is to pay for your loans.","You can gain your balance by clicking on the", "button every 10 clicks for a person.",
         "You have to pay all of your loans before the timer", "runs out."]
         ycoor = 0
