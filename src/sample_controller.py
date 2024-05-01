@@ -103,11 +103,21 @@ class Controller:
         self.win_lose_font = pygame.font.Font(None, 48)
         self.font = pygame.font.Font(None, 36)
 
-        wrapped_text = "Your goal is to pay for your loans.\nYou can gain your balance by clicking on the\nx10 button every 10 clicks for a person. You\nhave to pay all of your loans before the timer\nruns out."
-        self.text_surface = self.font.render(wrapped_text, True, self.RED)
-        self.new_surface = pygame.transform.smoothscale(self.text_surface, (550, 150))
-        self.text_rect = self.new_surface.get_rect(center=(self.WIDTH//2, self.HEIGHT//2 + 80))
-
+        # wrapped_text = f"Your goal is to pay for your loans.\n\tYou can gain your balance by clicking on the\n\tx10 button every 10 clicks for a person. You\n\thave to pay all of your loans before the timer\n\truns out."
+        # self.text_surface = self.font.render(wrapped_text, True, self.RED)
+        # self.new_surface = pygame.transform.smoothscale(self.text_surface, (550, 150))
+        # self.text_rect = self.new_surface.get_rect(center=(self.WIDTH//2, self.HEIGHT//2 + 80))
+        wrapped_text = ["Your goal is to pay for your loans.","You can gain your balance by clicking on the", "button every 10 clicks for a person.",
+        "You have to pay all of your loans before the timer", "runs out."]
+        ycoor = 0
+        self.text_surface = pygame.Surface((self.WIDTH//2, self.HEIGHT//2))
+        self.text_surface.fill(self.WHITE)
+        for text in wrapped_text:
+          text_surface = self.font.render(text, True, self.RED)
+          text_surface = pygame.transform.smoothscale_by(text_surface, 0.5)
+          self.text_surface.blit(text_surface, (0, ycoor))
+          ycoor += 30
+        self.play_button = pygame.Rect(self.WIDTH//2 - 50, self.HEIGHT//2 - 50, 100, 50)
         self.show_bottom_button = False
         self.show_pay_button = False
         self.play_button = pygame.Rect(self.WIDTH//2 - 50, self.HEIGHT//2 - 50, 100, 50)
@@ -174,14 +184,18 @@ class Controller:
         
         self.bottom_button_clicked = 0
         self.timer_value = 420
-        self.loan_amount = 150000
-        self.people = 0
-        self.loan_balance = 0
-        wrapped_text = "Your goal is to pay for your loans.\nYou can gain your balance by clicking on the\nx10 button every 10 clicks for a person. You\nhave to pay all of your loans before the timer\nruns out."
-        self.text_surface = self.font.render(wrapped_text, True, self.RED)
-        self.new_surface = pygame.transform.smoothscale(self.text_surface, (550, 150))
-        self.text_rect = self.new_surface.get_rect(center=(self.WIDTH//2, self.HEIGHT//2 + 80))
-        self.play_button = pygame.Rect(self.WIDTH//2 - 50, self.HEIGHT//2 - 50, 100, 50)
+        self.loan_amount = 150000 # enter class
+        self.people = 0 #enter class
+        self.loan_balance = 0 # enter class Access through organization object. Instead of self.people do self.org.people
+        # wrapped_text = ["Your goal is to pay for your loans.","You can gain your balance by clicking on the", "button every 10 clicks for a person.",
+        # "You have to pay all of your loans before the timer", "runs out."]
+        # xcoor = 0
+        # for text in wrapped_text:
+        #   text_surface = self.font.render(wrapped_text, True, self.RED)
+        #   self.new_surface = pygame.transform.smoothscale(text_surface, (550, 150))
+        #   xcoor += 50
+        #   self.text_rect = self.new_surface.get_rect(center=(self.WIDTH//2, self.HEIGHT//2 + xcoor))
+        #   self.play_button = pygame.Rect(self.WIDTH//2 - 50, self.HEIGHT//2 - 50, 100, 50)
     
     def show_popup_message(self, message):
         self.popup_text = message
@@ -268,8 +282,8 @@ class Controller:
                 self.screen.blit(self.pay_button_text, self.pay_button_text_rect)
 
             if self.text_surface.get_width() > 0:
-                pygame.draw.rect(self.screen, self.RED, self.text_rect, 2)
-                self.screen.blit(self.text_surface, self.text_rect)
+                # pygame.draw.rect(self.screen, self.RED, self.text_rect, 2)
+                self.screen.blit(self.text_surface, (10, self.HEIGHT//4)) #place text
 
             if self.show_loans:
                 self.loan_text = self.font.render("Loans: ${} (Balance: ${})".format(self.loan_amount, self.loan_balance), True, self.RED)
