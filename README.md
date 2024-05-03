@@ -61,7 +61,7 @@ Controller: Contains multiple functions such as how the game will be running, in
 
 | Step                 |Procedure             |Expected Results                   |
 |----------------------|:--------------------:|-----------------------------------------------------------------:|
-|  1                   | Run sample_controller.py    |game display opens. tutorial box is visible. Esc closes program   |
+|  1                   | Run main.py    |game display opens. tutorial box is visible. Esc closes program   |
 |  2                   | Click play button    |GUI opens. Timer starts from 7 min. 150,000 in Loans $0 balance. Option to pay button      |
 |  3                   | Click button 10x     |Number of people goes to 1. $1/sec added to balance.              |
 |  4                   |Continue pressing btn |Every 10 times one person added. 2 people rate $2/sec per person $4/sec total|
