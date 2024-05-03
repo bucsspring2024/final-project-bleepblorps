@@ -1,6 +1,4 @@
 
-:warning: Everything between << >> needs to be replaced (remove << >> after replacing)
-
 #  Pyramid Scheme Simulator 
 ## CS110 Final Project   Spring, 2024 
 

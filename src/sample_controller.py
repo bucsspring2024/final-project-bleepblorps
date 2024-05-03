@@ -1,7 +1,7 @@
 import pygame
 import sys
 
-from models import Models
+from src.models import Models
 
 class Controller:
     def __init__(self, models_instance):
