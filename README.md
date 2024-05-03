@@ -51,11 +51,9 @@ Continue hitting button 10x for hiring more people for exponential growth in rat
 
 ### Classes
 
-ImageButton: Constructs a clickable button. This constructs how the buttons would look like and for the detection of a click of the button. It also explains to the computer that these buttons will have a set position.
-
 Models: Constructs the initial loan_balance (your initial balance which would be 0) as well as the initial debt obligations in loan_amount (150,000) and the initial amount of people in the pyramid scheme (0)
 
-Controller: Contains multiple functions such as how the game will be running, initializes the timer, handles the blitting of the images like the background and buttons. It also handles the win and lose screen and the rate at which you will make money via how many times the button was clicked and how many people are working in your scheme. 
+Controller: Contains multiple functions such as how the game will be running, initializes the timer, handles the blitting of the images like the background and buttons. Constructs a clickable button. This constructs how the buttons would look like and for the detection of a click of the button. It also explains to the computer that these buttons will have a set position. It also handles the win and lose screen and the rate at which you will make money via how many times the button was clicked and how many people are working in your scheme. 
 
 ## ATP
 
