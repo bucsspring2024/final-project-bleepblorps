@@ -1,8 +1,8 @@
 
 :warning: Everything between << >> needs to be replaced (remove << >> after replacing)
 
-# << Project Title >>
-## CS110 Final Project  << Semester, Year >>
+#  Pyramid Scheme Simulator 
+## CS110 Final Project   Spring, 2024 
 
 ## Team Members
 
@@ -12,30 +12,23 @@ Steven Doljansky
 
 ## Project Description
 
-Pyramid scheme simulator. Run and manage your own pyramid scheme. Will you pay off your devastating financial obligations in time?
+Pyramid scheme simulator. Run and manage your own pyramid scheme. Will you pay off your devastating financial obligations in time? In this project the player has to pay off $150,000 in debt in 7 minutes by recruiting people into their pyramid scheme. To recruit people, click the button 10 times. 1 person generates $1/sec. Then continue clicking the button for exponential growth. 2 people in your scheme makes it so that each person makes $2/sec bringing the total rate for 2 people to be $4/sec. To pay off the loans and transfer balance amount click the Pay button. Good luck!
 
 ***    
 
 ## GUI Design
 
-Top window showing money owed to IRS, Banks, and Mafia on the right side and slider allowing you to take out loans with varying interest rate tied to your credit score (tied to previous loans owed) as well as a display showing interest owed which is deduced by your interest rate and total loans.
+Top window showing monetary obligations (unpaid loan amount), balance, and time left.
+Person on the left side of the screen with x(int) amount of people showed. This is the amount of people that are working for you.
 
-Timer in the middle top of the screen of 7 minutes countdown when press play
+Timer in the right side top of the screen of 7 minutes countdown that starts as soon as player hits play.
+Click button 10x to hire first person and make $1 per person per second.
+Once you have money in your balance you can hit the pay button to deduce that amount from your loan.
+Continue hitting button 10x for hiring more people for exponential growth in rate of money being added to your balance. 
+2 people make $2 per person per second.
+3 people make $3 per person per second and so on.
 
-Starts with one person (you) in the middle of the screen and you purchase button. Click button 100 times to hire first person.
-Each person on the most bottom layer makes $15. Second layer of people hire a new person every 30-50 seconds. Stop hiring after 4 people on second layer (people hired by second layer before also hire a new person in 20-30 seconds). $15 per 25 seconds on very bottom layer. Each layer adds 1 to power of money made on the layer below them.
 
-
-def generate_random_string(length):
-    letters = string.ascii_letters
-    result_str = "".join(random.choice(letters))
-
-name = 'A'
-people = {}
-for _ in range(1000):
-    people[name] = random.randint(10)
-    name = ord(name)
-json.dump()
 
 ### Initial Design
 
@@ -43,7 +36,8 @@ json.dump()
 
 ### Final Design
 
-![final gui](assets/finalgui.jpg)
+![final gui](assets/fgui1.png)
+![final gui](assets/fgui2.png)
 
 ## Program Design
 
@@ -51,13 +45,19 @@ json.dump()
 
 1. Start Screen Before Game/Timer Starts
 2. Countdown Timer
-3. Button (clicker to hire next employee)
-4. Visual Representation of Totally Not a Pyramid Scheme
-5. Names of Employees
+3. Button (clicker to hire next employee) (10 clicks for +1 employee)
+4. Visual Representation of How many people are working for you
+5. Stonks background 
+6. Balance amount 
+7. Pay button to transfer money from balance to financial obligations
 
 ### Classes
 
-- << You should have a list of each of your classes with a description >>
+ImageButton: Constructs a clickable button. This constructs how the buttons would look like and for the detection of a click of the button. It also explains to the computer that these buttons will have a set position.
+
+Models: Constructs the initial loan_balance (your initial balance which would be 0) as well as the initial debt obligations in loan_amount (150,000) and the initial amount of people in the pyramid scheme (0)
+
+Controller: Contains multiple functions such as how the game will be running, initializes the timer, handles the blitting of the images like the background and buttons. It also handles the win and lose screen and the rate at which you will make money via how many times the button was clicked and how many people are working in your scheme. 
 
 ## ATP
 
@@ -70,4 +70,5 @@ json.dump()
 |  5                   | Continue pressing btn|Balance grows exponentially   |
 |  6                   | If esc at any point  |Tutorial display opens back up. Progress not saved. Another esc closes program|
 |  7                   | Press pay loan       |Deducts balance and deducts loan amount. If loan paid then win screen   |
-|  8                   | Timer runs out       |Lose screen                                                |
+|  8                   | Timer runs out (unpaid)      |Lose screen                                                |
+|  9                   | Loans paid for      |Win screen                                                |
